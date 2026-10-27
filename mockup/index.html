@@ -68,9 +68,9 @@
     <a class="brand" href="./"><img class="brand__logo" src="../assets/logo.svg" alt="ІСККОН Чернівці" aria-hidden="true" width="40" height="40"><img class="brand__logo brand__logo--light" src="../assets/logo-light.svg" alt="ІСККОН Чернівці" aria-hidden="true" width="40" height="40"><b translate="no">ІСККОН ЧЕРНІВЦІ</b></a>
     <nav class="nav" id="nav">
       <a href="./" aria-current="page">Головна</a>
-      <a href="../courses/">Навчання</a>
-      <a href="../food/">Їжа життя</a>
-      <a href="../donation/">Пожертви</a>
+      <a href="courses/">Навчання</a>
+      <a href="food/">Їжа життя</a>
+      <a href="donation/">Пожертви</a>
     </nav>
     <button type="button" class="theme-btn" aria-pressed="false" aria-label="Тема «Шьяма»"><span class="theme-btn__dot" aria-hidden="true"></span><span class="theme-btn__txt">Шьяма</span></button>
     <div class="langs">
@@ -96,6 +96,39 @@
     <img src="../assets/temple/hero-1280.webp"
       srcset="../assets/temple/hero-640.webp 640w, ../assets/temple/hero-768.webp 768w, ../assets/temple/hero-960.webp 960w, ../assets/temple/hero-1280.webp 1280w, ../assets/temple/hero-1920.webp 1920w"
       sizes="(max-width:860px) 100vw, 50vw" width="2560" height="1703" alt="" fetchpriority="high" decoding="async">
+
+    <!-- «Шьяма»: фото вівтаря в силуеті лотоса (власний малюнок за мотивом лотоса; логотип ISKCON не змінюється).
+         Реальні фото як є: вівтар храму, Гаура-пурніма 2024 (Артем Гусак). Лише CSS/JS-обрамлення, файли не змінені.
+         Без JS і у світлій темі — звичайне фото вище. -->
+    <div class="lotus">
+      <svg class="lotus__art" viewBox="0 0 600 480" aria-hidden="true" focusable="false">
+        <defs>
+          <clipPath id="lotus-clip">
+          <path class="petal petal--c" d="M300 452C222 368 228 160 300 36C372 160 378 368 300 452Z"/>
+          <path class="petal petal--l1" d="M300 452C222 368 228 160 300 36C372 160 378 368 300 452Z" transform="translate(300 452) rotate(-30) scale(0.9) translate(-300 -452)"/>
+          <path class="petal petal--r1" d="M300 452C222 368 228 160 300 36C372 160 378 368 300 452Z" transform="translate(300 452) rotate(30) scale(0.9) translate(-300 -452)"/>
+          <path class="petal petal--l2" d="M300 452C222 368 228 160 300 36C372 160 378 368 300 452Z" transform="translate(300 452) rotate(-58) scale(0.72) translate(-300 -452)"/>
+          <path class="petal petal--r2" d="M300 452C222 368 228 160 300 36C372 160 378 368 300 452Z" transform="translate(300 452) rotate(58) scale(0.72) translate(-300 -452)"/>
+          </clipPath>
+        </defs>
+        <!-- контур під фото: видно лише зовнішній край силуету, без внутрішніх перетинів пелюсток -->
+        <g class="lotus__line">
+        <path class="petal petal--c" d="M300 452C222 368 228 160 300 36C372 160 378 368 300 452Z" pathLength="1"/>
+        <path class="petal petal--l1" d="M300 452C222 368 228 160 300 36C372 160 378 368 300 452Z" transform="translate(300 452) rotate(-30) scale(0.9) translate(-300 -452)" pathLength="1"/>
+        <path class="petal petal--r1" d="M300 452C222 368 228 160 300 36C372 160 378 368 300 452Z" transform="translate(300 452) rotate(30) scale(0.9) translate(-300 -452)" pathLength="1"/>
+        <path class="petal petal--l2" d="M300 452C222 368 228 160 300 36C372 160 378 368 300 452Z" transform="translate(300 452) rotate(-58) scale(0.72) translate(-300 -452)" pathLength="1"/>
+        <path class="petal petal--r2" d="M300 452C222 368 228 160 300 36C372 160 378 368 300 452Z" transform="translate(300 452) rotate(58) scale(0.72) translate(-300 -452)" pathLength="1"/>
+        </g>
+        <g clip-path="url(#lotus-clip)">
+          <rect class="lotus__base" width="600" height="480"/>
+          <image class="lotus__img is-on" href="../assets/temple/hero-960.webp" x="0" y="0" width="600" height="480" preserveAspectRatio="xMidYMid slice"/>
+          <image class="lotus__img" data-href="../assets/festival/photo-01-800.webp" x="0" y="0" width="600" height="480" preserveAspectRatio="xMidYMid slice"/>
+          <image class="lotus__img" data-href="../assets/festival/photo-02-800.webp" x="0" y="0" width="600" height="480" preserveAspectRatio="xMidYMid slice"/>
+          <image class="lotus__img" data-href="../assets/festival/photo-03-800.webp" x="0" y="0" width="600" height="480" preserveAspectRatio="xMidYMid slice"/>
+        </g>
+      </svg>
+      <button type="button" class="lotus__pause" aria-pressed="false" hidden>Пауза</button>
+    </div>
   </figure>
 </section>
 
@@ -225,7 +258,7 @@
         <p>Знайомство з Бгаґавад-Ґітою, законами карми та реінкарнації.
           Глибше занурення — на курсах «Хто Я?», «Основи ведичної філософії», «Бгакті-шастри».</p>
         <p>В основі вчення — <a href="https://vedabase.io/uk/library/bg/" target="_blank" rel="noopener">Бгагавад-гіта</a>: душа вічна, а матеріальне тіло тимчасове. Через віддане служіння (бгакті-йогу) душа відновлює свій зв'язок з Крішною — Верховним Богом-Особою.</p>
-        <a class="arrow-link" href="../courses/">До курсів →</a>
+        <a class="arrow-link" href="courses/">До курсів →</a>
       </div>
       <div class="mantra-card">
         <h3>Мантра-йога</h3>
@@ -244,7 +277,7 @@
           <div class="path__body">
             <h3>Навчання</h3>
             <p>Курси ведичної філософії, кулінарії та гри на традиційних інструментах.</p>
-            <a class="arrow-link" href="../courses/">Обрати курс →</a>
+            <a class="arrow-link" href="courses/">Обрати курс →</a>
           </div>
         </article>
         <article class="path path--food">
@@ -254,7 +287,7 @@
             <h3>Потрібна їжа просто зараз — куди мені звернутися?</h3>
             <p>Благодійні гарячі вегетаріанські обіди щосуботи. Долучайтесь як волонтер!</p>
             <p class="path__where">Соборна площа, щосуботи о 14:00</p>
-            <a class="arrow-link" href="../food/">Детальніше →</a>
+            <a class="arrow-link" href="food/">Детальніше →</a>
           </div>
         </article>
       </div>
@@ -409,9 +442,9 @@
     </div>
     <nav class="foot__nav" aria-label="Меню">
       <a href="./">Головна</a>
-      <a href="../courses/">Навчання</a>
-      <a href="../food/">Їжа життя</a>
-      <a href="../donation/">Пожертви</a>
+      <a href="courses/">Навчання</a>
+      <a href="food/">Їжа життя</a>
+      <a href="donation/">Пожертви</a>
     </nav>
     <img class="foot__logo" src="../assets/logo-light.svg" alt="" width="72" height="72" loading="lazy" decoding="async">
     <p class="foot__legal">РО «Релігійна громада свідомості Крішни в місті Чернівці» · ЄДРПОУ 46285356</p>
